@@ -4,13 +4,13 @@
 {
 
 "type": "amazon-ebs",
-"communicator": "ssh"
-"ssh_username" : "Sky_ubun_au"
+"communicator": "ssh",
 "region" : "us-east-1",
 "source_ami": "ami-40d28157",
 "instance_type": "t2.micro",
 "ssh_keypair_name":"aws-linux",
 "ami_name": "packer-sky01",
+ "ssh_username" : "Sky_ubun_au"
 }
 ],
 "provisioners": 
