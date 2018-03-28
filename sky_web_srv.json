@@ -1,0 +1,31 @@
+{
+"builders":
+ [
+{
+
+"type": "amazon-ebs",
+"communicator"="ssh"
+"ssh_private_key_file":"{{user user_home}}/.ssh/aws-linux",
+"ssh_username": "Sky_ubun_au"
+"acces_key": "{{user 'access_key'}}"
+"secret_key": "{{user 'secrert_key'}}"
+"region": "us-east-1b",
+"source_ami": "ami-40d28157",
+"instance_type": "t2.micro",
+"ssh_keypair_name":"aws-linux",
+"ami_name": "packer-sky01",
+"subnet_id": "subnet-dc1933ab"
+"vpc_id": "vpc-137d2f76"
+}
+],
+"provisioners": 
+[{
+"type": "shell",
+"inline": [
+"sudo apt-get update",
+"sudo apt-get install -y php",
+"sudo apt-get install -y apache2",
+"sudo git clone https://github.com/suri38/Sky22/php-app.git /var/www/html/app"
+]
+}]
+}
